@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_d/pages/food_details.dart';
 import 'package:food_d/pages/food_item.dart';
 // import 'package:food_d/widgets/favorite_item.dart';
 
@@ -38,63 +39,72 @@ class _FavoritesPageState extends State<FavoritesPage> {
     return ListView.builder(
       itemCount: favoriteFood.length,
       itemBuilder: (BuildContext context, int index) {
-        return Card(
-          color: Colors.white,
-          child: LayoutBuilder(
-            builder: (BuildContext context, BoxConstraints constraints) =>
-             Row(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(8.0),
-                  child: Image.network(
-                    favoriteFood[index].imageurl,
-                    height:size.width * .3,
-                    width: constraints.maxWidth*.4,
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          favoriteFood[index].title,
-                          style: const TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          favoriteFood[index].price.toString(),
-                          style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
+        return InkWell(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) =>
+                    FoodDetails(foodItem: favoriteFood[index]),
+              ),
+            );
+          },
+          child: Card(
+            color: Colors.white,
+            child: LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints) => Row(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.network(
+                      favoriteFood[index].imageurl,
+                      height: size.width * .3,
+                      width: constraints.maxWidth * .4,
+                      fit: BoxFit.contain,
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: IconButton(
-                    onPressed: () {
-                      final targetItem = favoriteFood[index];
-                      final targetIndex = food.indexOf(targetItem);
-                      setState(() {
-                        food[targetIndex] = food[targetIndex].copyWith(
-                          isFavorite: false,
-                        );
-                        favoriteFood.remove(targetItem);
-                      });
-                    },
-                    // => food[widget.foodIndex] =
-                    //     food[widget.foodIndex].copyWith(isFavorite: false),
-                    icon: Icon(Icons.favorite),
-                    color: Theme.of(context).primaryColor,
-                    iconSize: 30,
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            favoriteFood[index].title,
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            favoriteFood[index].price.toString(),
+                            style: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: IconButton(
+                      onPressed: () {
+                        final targetItem = favoriteFood[index];
+                        final targetIndex = food.indexOf(targetItem);
+                        setState(() {
+                          food[targetIndex] = food[targetIndex].copyWith(
+                            isFavorite: false,
+                          );
+                          favoriteFood.remove(targetItem);
+                        });
+                      },
+                      // => food[widget.foodIndex] =
+                      //     food[widget.foodIndex].copyWith(isFavorite: false),
+                      icon: Icon(Icons.favorite),
+                      color: Theme.of(context).primaryColor,
+                      iconSize: 30,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         );

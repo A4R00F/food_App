@@ -24,7 +24,7 @@ class _FavoriteItemState extends State<FavoriteItem> {
         onTap: () => setState(() {
           food[widget.foodindex] = food[widget.foodindex].copyWith(
             isFavorite: !(food[widget.foodindex].isFavorite ?? false),
-          );
+          ); // علشان اغير قيمة ال Isfavorite,
         }),
         child: food[widget.foodindex].isFavorite == true
             ? Icon(Icons.favorite, color: Colors.red)

@@ -116,18 +116,12 @@ class ButtomNavPage extends StatefulWidget {
 class _ButtomNavPageState extends State<ButtomNavPage> {
   int selectedIndex = 0;
 
-  final List<Widget> pages = const [
-    HomePage(),
-    FavoritesPage(),
-    ProfilePage(),
-  ];
+  final List<Widget> pages = const [HomePage(), FavoritesPage(), ProfilePage()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Drawer(
-        child: Center(child: Text("I am in the drawer")),
-      ),
+      drawer: const Drawer(child: Center(child: Text("I am in the drawer"))),
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
@@ -135,11 +129,16 @@ class _ButtomNavPageState extends State<ButtomNavPage> {
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
-      body: Center(child: pages[selectedIndex]),
+      body: Center(
+        child: pages[selectedIndex],
+      ), // اللي هيظهر عندي هيكون ف ال body
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favorites'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favorites',
+          ),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
         selectedItemColor: Theme.of(context).primaryColor,
