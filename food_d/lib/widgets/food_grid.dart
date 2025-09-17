@@ -43,6 +43,7 @@ class _FoodGridState extends State<FoodGrid> {
                   child: Padding(
                     padding: EdgeInsets.all(8.0),
                     child: FavoriteItem(
+                      // favorite
                       foodindex: widget.foodindex,
                       constraints: constraints,
                     ),

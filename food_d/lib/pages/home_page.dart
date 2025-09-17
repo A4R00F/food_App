@@ -1,6 +1,8 @@
 // import 'dart:nativewrappers/_internal/vm/lib/math_patch.dart';
 import 'dart:io';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_d/pages/food_details.dart';
 import 'package:food_d/pages/food_item.dart';
 import 'package:food_d/widgets/food_grid.dart';
 
@@ -79,7 +81,19 @@ class HomePage extends StatelessWidget {
               mainAxisSpacing: 10,
             ),
             itemBuilder: (BuildContext context, int index) {
-              return Center(child: (FoodGrid(foodindex: index)));
+              return Center(
+                child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      CupertinoPageRoute(
+                        builder: (context) =>
+                            FoodDetails(foodItem: food[index]),
+                      ),
+                    );
+                  },
+                  child: (FoodGrid(foodindex: index)),
+                ),
+              );
             },
           ),
         ],
