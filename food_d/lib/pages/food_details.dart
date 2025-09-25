@@ -37,8 +37,6 @@ class FoodDetails extends StatelessWidget {
                         child: Image.network(
                           food[foodindex].imageurl,
                           fit: BoxFit.contain,
-                          // height: 200,
-                          // width: 70,
                         ),
                       ),
                     ),

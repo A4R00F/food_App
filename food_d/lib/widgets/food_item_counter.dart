@@ -9,6 +9,7 @@ class FoodItemCounter extends StatefulWidget {
 
 class _FoodItemCounterState extends State<FoodItemCounter> {
   @override
+  // ignore: override_on_non_overriding_member
   int counter = 1;
   void increment() {
     setState(() {
