@@ -30,7 +30,9 @@ class _FoodItemCounterState extends State<FoodItemCounter> {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         ElevatedButton(onPressed: increment, child: Text('+')),
-        Text(counter.toString()),
+        const SizedBox(width: 10),
+        Text(counter.toString(), style: TextStyle(fontWeight: FontWeight.w400)),
+        const SizedBox(width: 10),
         // Text(counter.toString()),
         ElevatedButton(
           onPressed: decrement,

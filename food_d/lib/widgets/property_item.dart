@@ -13,13 +13,13 @@ class PropertyItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(protitle, style: Theme.of(context).textTheme.headlineMedium),
         Text(
-          provalue,
+          protitle,
           style: Theme.of(
             context,
           ).textTheme.headlineSmall!.copyWith(color: Colors.grey),
         ),
+        Text(provalue, style: Theme.of(context).textTheme.headlineSmall),
       ],
     );
   }

@@ -7,8 +7,8 @@ class CustomBackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomSecondryButton(
-      height: 30,
-      width: 30,
+      height: 10,
+      width: 10,
       onTap: () {
         Navigator.of(context).pop();
       },

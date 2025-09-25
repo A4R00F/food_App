@@ -20,7 +20,7 @@ class CustomSecondryButton extends StatelessWidget {
     return Container(
       width: width,
       height: height,
-      color: Colors.grey[200],
+      color: Colors.white,
 
       child: InkWell(
         onTap: onTap,
