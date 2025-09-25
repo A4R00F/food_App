@@ -57,6 +57,8 @@ class _FavoritesPageState extends State<FavoritesPage> {
                   );
                   setState(() {});
                 });
+
+            /// Then بتشتغل لما بيحصل عملية ال Pop من الصفحة  ااي عملت لها push
           },
           child: Card(
             color: Colors.white,
