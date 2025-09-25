@@ -28,7 +28,13 @@ class FoodDetails extends StatelessWidget {
                     pinned: true,
                     leading: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: CustomBackButton(),
+                      child: CustomBackButton(
+                        ontap: () {
+                          Navigator.of(
+                            context,
+                          ).pop<String>(food[foodindex].title);
+                        },
+                      ),
                     ),
                     expandedHeight: size.height * 0.4,
                     flexibleSpace: FlexibleSpaceBar(
