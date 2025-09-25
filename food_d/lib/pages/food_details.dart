@@ -4,7 +4,7 @@ import 'package:food_d/widgets/custom_back_button.dart';
 import 'package:food_d/widgets/favorite_item.dart';
 // import 'package:food_d/widgets/custom_back_button.dart';
 // import 'package:food_d/widgets/favorite_item.dart';
-import 'package:food_d/widgets/food_banner_details.dart';
+// import 'package:food_d/widgets/food_banner_details.dart';
 import 'package:food_d/widgets/food_item_counter.dart';
 import 'package:food_d/widgets/property_item.dart';
 
