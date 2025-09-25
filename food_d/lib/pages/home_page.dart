@@ -6,9 +6,14 @@ import 'package:food_d/pages/food_details.dart';
 import 'package:food_d/pages/food_item.dart';
 import 'package:food_d/widgets/food_grid.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final Size = MediaQuery.of(context).size;
@@ -84,12 +89,13 @@ class HomePage extends StatelessWidget {
               return Center(
                 child: InkWell(
                   onTap: () {
-                    Navigator.of(context).push(
-                      CupertinoPageRoute(
-                        builder: (context) =>
-                            FoodDetails(foodItem: food[index]),
-                      ),
-                    );
+                    Navigator.of(context)
+                        .push(
+                          CupertinoPageRoute(
+                            builder: (context) => FoodDetails(foodindex: index),
+                          ),
+                        )
+                        .then((onValue) => setState(() {}));
                   },
                   child: (FoodGrid(foodindex: index)),
                 ),

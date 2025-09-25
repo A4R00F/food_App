@@ -45,7 +45,9 @@ class _FoodGridState extends State<FoodGrid> {
                     child: FavoriteItem(
                       // favorite
                       foodindex: widget.foodindex,
-                      constraints: constraints,
+                      height: 20,
+                      width: 20,
+                      // constraints: constraints,
                     ),
                   ),
                 ),

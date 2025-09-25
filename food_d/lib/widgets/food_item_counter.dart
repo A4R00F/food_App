@@ -1,0 +1,45 @@
+import 'package:flutter/material.dart';
+
+class FoodItemCounter extends StatefulWidget {
+  const FoodItemCounter({super.key});
+
+  @override
+  State<FoodItemCounter> createState() => _FoodItemCounterState();
+}
+
+class _FoodItemCounterState extends State<FoodItemCounter> {
+  @override
+  int counter = 1;
+  void increment() {
+    setState(() {
+      counter++;
+    });
+  }
+
+  void decrement() {
+    setState(() {
+      if (counter > 1) {
+        counter--;
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        ElevatedButton(onPressed: increment, child: Text('+')),
+        Text(counter.toString()),
+        // Text(counter.toString()),
+        ElevatedButton(
+          onPressed: decrement,
+          child: Text(
+            '-',
+            style: TextStyle(color: counter > 1 ? Colors.black : Colors.grey),
+          ),
+        ),
+      ],
+    );
+  }
+}
