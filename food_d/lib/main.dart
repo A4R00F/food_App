@@ -29,9 +29,10 @@ class foodapp extends StatelessWidget {
         fontFamily: 'OpenSans',
       ),
       debugShowCheckedModeBanner: false,
-      // home: BottomNavPage(), استبدلناه بال routes 
-      routes: {'/': (context) => const BottomNavPage(),
-      '/food-details':(context)=> FoodDetails(foodindex: 1)
+      // home: BottomNavPage(), استبدلناه بال routes
+      routes: {
+        '/': (context) => const BottomNavPage(),
+        '/food-details': (context) => FoodDetails(),
       },
     );
   }

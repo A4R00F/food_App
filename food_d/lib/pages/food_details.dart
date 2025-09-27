@@ -9,12 +9,13 @@ import 'package:food_d/widgets/food_item_counter.dart';
 import 'package:food_d/widgets/property_item.dart';
 
 class FoodDetails extends StatelessWidget {
-  const FoodDetails({super.key, required this.foodindex});
+  const FoodDetails({super.key});
   // final FoodItem foodItem;
-  final int foodindex;
+  // final int foodindex; استبدلناها بال  ModalRoute
 
   @override
   Widget build(BuildContext context) {
+    final int foodindex = ModalRoute.of(context)!.settings.arguments as int;
     final size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(

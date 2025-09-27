@@ -89,7 +89,9 @@ class _HomePageState extends State<HomePage> {
               return Center(
                 child: InkWell(
                   onTap: () {
-                    Navigator.of(context).pushNamed('/food-details').then((
+                    Navigator.of(context).pushNamed('/food-details',
+                    arguments: index
+                    ).then((
                       onValue,
                     ) {
                       debugPrint(
