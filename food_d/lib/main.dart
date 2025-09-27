@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_d/pages/buttom_nav_page.dart';
+import 'package:food_d/pages/food_details.dart';
 // import 'package:food_d/pages/home_page.dart';
 
 // ignore: camel_case_types
@@ -28,7 +29,10 @@ class foodapp extends StatelessWidget {
         fontFamily: 'OpenSans',
       ),
       debugShowCheckedModeBanner: false,
-      home: ButtomNavPage(),
+      // home: BottomNavPage(), استبدلناه بال routes 
+      routes: {'/': (context) => const BottomNavPage(),
+      '/food-details':(context)=> FoodDetails(foodindex: 1)
+      },
     );
   }
 }

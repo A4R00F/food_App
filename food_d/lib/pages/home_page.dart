@@ -89,18 +89,14 @@ class _HomePageState extends State<HomePage> {
               return Center(
                 child: InkWell(
                   onTap: () {
-                    Navigator.of(context)
-                        .push<String>(
-                          CupertinoPageRoute(
-                            builder: (context) => FoodDetails(foodindex: index),
-                          ),
-                        )
-                        .then((onValue) {
-                          debugPrint(
-                            "The Value Returned In Home Screen is $onValue",
-                          );
-                          setState(() {});
-                        });
+                    Navigator.of(context).pushNamed('/food-details').then((
+                      onValue,
+                    ) {
+                      debugPrint(
+                        "The Value Returned In Home Screen is $onValue",
+                      );
+                      setState(() {});
+                    });
                   },
                   child: (FoodGrid(foodindex: index)),
                 ),

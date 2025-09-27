@@ -106,14 +106,14 @@ import 'package:food_d/pages/favorites_page.dart';
 import 'package:food_d/pages/home_page.dart';
 import 'package:food_d/pages/profile_page.dart';
 
-class ButtomNavPage extends StatefulWidget {
-  const ButtomNavPage({super.key});
+class BottomNavPage extends StatefulWidget {
+  const BottomNavPage({super.key});
 
   @override
-  State<ButtomNavPage> createState() => _ButtomNavPageState();
+  State<BottomNavPage> createState() => _BottomNavPageState();
 }
 
-class _ButtomNavPageState extends State<ButtomNavPage> {
+class _BottomNavPageState extends State<BottomNavPage> {
   int selectedIndex = 0;
 
   final List<Widget> pages = const [HomePage(), FavoritesPage(), ProfilePage()];
