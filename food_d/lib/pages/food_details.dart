@@ -10,6 +10,8 @@ import 'package:food_d/widgets/property_item.dart';
 
 class FoodDetails extends StatelessWidget {
   const FoodDetails({super.key});
+    static const String routeName = '/food-details';
+
   // final FoodItem foodItem;
   // final int foodindex; استبدلناها بال  ModalRoute
 

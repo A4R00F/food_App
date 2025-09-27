@@ -6,7 +6,6 @@ import 'package:food_d/pages/food_details.dart';
 // ignore: camel_case_types
 class foodapp extends StatelessWidget {
   const foodapp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,7 +31,7 @@ class foodapp extends StatelessWidget {
       // home: BottomNavPage(), استبدلناه بال routes
       routes: {
         '/': (context) => const BottomNavPage(),
-        '/food-details': (context) => FoodDetails(),
+        FoodDetails.routeName: (context) => FoodDetails(),
       },
     );
   }

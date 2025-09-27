@@ -1,6 +1,6 @@
 // import 'dart:nativewrappers/_internal/vm/lib/math_patch.dart';
 import 'dart:io';
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_d/pages/food_details.dart';
 import 'package:food_d/pages/food_item.dart';
@@ -16,6 +16,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+  
     final Size = MediaQuery.of(context).size;
     final TextScale = MediaQuery.of(context).textScaleFactor;
     return SingleChildScrollView(
@@ -89,16 +90,14 @@ class _HomePageState extends State<HomePage> {
               return Center(
                 child: InkWell(
                   onTap: () {
-                    Navigator.of(context).pushNamed('/food-details',
-                    arguments: index
-                    ).then((
-                      onValue,
-                    ) {
-                      debugPrint(
-                        "The Value Returned In Home Screen is $onValue",
-                      );
-                      setState(() {});
-                    });
+                    Navigator.of(context)
+                        .pushNamed(FoodDetails.routeName, arguments: index)
+                        .then((onValue) {
+                          debugPrint(
+                            "The Value Returned In Home Screen is $onValue",
+                          );
+                          setState(() {});
+                        });
                   },
                   child: (FoodGrid(foodindex: index)),
                 ),

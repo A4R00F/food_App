@@ -45,7 +45,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
 
             Navigator.of(context)
                 .pushNamed(
-                  '/food-details',
+                  FoodDetails.routeName,
                   arguments: targetindex,
                   // لأنه هناك في ال صفحة ال details بيستقبل ال index بتاع ال food مش بتاع ال favorite_food
                 )
