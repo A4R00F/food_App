@@ -1,4 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:food_d/utilities/app_assets.dart';
+
 class FoodItem {
   final String title;
   final String imageurl;
@@ -30,33 +32,33 @@ List<FoodItem> food = [
   FoodItem(
     title: "Burger",
     imageurl:
-        'https://s7d1.scene7.com/is/image/mcdonalds/mcd-double-cheeseburger-uae-1223:nutrition-calculator-tile',
+    AppAssets.burger,
     price: 8,
     // isFavorite: true,
   ),
   FoodItem(
     title: "Pizza",
     imageurl:
-        'https://img.pikbest.com/png-images/pizza-logo-vector-graphic-element_1772934.png!f305cw',
+    AppAssets.pizza,
     price: 8,
   ),
   FoodItem(
     title: "Pizza",
     imageurl:
-        'https://img.pikbest.com/png-images/pizza-logo-vector-graphic-element_1772934.png!f305cw',
+    AppAssets.pizza,
     price: 8,
   ),
   FoodItem(
     title: "Chicken",
     imageurl:
-        'https://lh6.googleusercontent.com/proxy/mTqivkz8vJtU-Es3Lm3fyRmKLlXrKPh-njLHY77duZ2xFhspBLROlcRCAJ6lE-5mRT0E6CXe08I45gJMMo6p71kzsvY-xFTNZs2PfHf0',
+    AppAssets.chicken,
     price: 8,
     // isFavorite: true,
   ),
   FoodItem(
     title: "Chicken",
     imageurl:
-        'https://lh6.googleusercontent.com/proxy/mTqivkz8vJtU-Es3Lm3fyRmKLlXrKPh-njLHY77duZ2xFhspBLROlcRCAJ6lE-5mRT0E6CXe08I45gJMMo6p71kzsvY-xFTNZs2PfHf0',
+    AppAssets.chicken,
     price: 8,
     // isFavorite: true,
   ),

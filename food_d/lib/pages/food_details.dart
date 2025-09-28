@@ -43,7 +43,7 @@ class FoodDetails extends StatelessWidget {
                     flexibleSpace: FlexibleSpaceBar(
                       background: DecoratedBox(
                         decoration: BoxDecoration(color: Colors.grey[200]),
-                        child: Image.network(
+                        child: Image.asset(
                           food[foodindex].imageurl,
                           fit: BoxFit.contain,
                         ),

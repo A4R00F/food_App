@@ -31,7 +31,7 @@ class _FoodGridState extends State<FoodGrid> {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(12),
-                  child: Image.network(
+                  child: Image.asset(
                     food[widget.foodindex].imageurl,
                     height: constraints.maxWidth * .8,
                     width: size.width * 0.4,

@@ -65,7 +65,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
-                    child: Image.network(
+                    child: Image.asset(
                       favoriteFood[index].imageurl,
                       height: size.width * .3,
                       width: constraints.maxWidth * .4,

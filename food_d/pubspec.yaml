@@ -24,3 +24,9 @@ flutter:
 
   assets:
     - assets/images/ashraf.jpg
+    - assets/images/burger.jpg
+    - assets/images/pizza.png
+    - assets/images/chicken.png
+    - assets/images/categories/burger-2.png
+    - assets/images/categories/chicken-leg.png
+    - assets/images/categories/pizza_2.png
