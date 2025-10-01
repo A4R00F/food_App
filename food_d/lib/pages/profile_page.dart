@@ -92,14 +92,13 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Platform.isAndroid?SingleChildScrollView(
+    return SingleChildScrollView(
       child: Column(
         children: [
           Padding(
             padding: EdgeInsets.all(8.0),
             child: Container(
               height: size.height * 0.25,
-      
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
@@ -140,100 +139,7 @@ class ProfilePage extends StatelessWidget {
           Divider(),
         ],
       ),
-    ):Platform.isIOS? Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Container(
-              height: size.height * 0.25,
-      
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  image: AssetImage('assets/images/ashraf.jpg'),
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ),
-          ),
-          Text(
-            "Asharf Nagy Mohamed",
-            style: Theme.of(
-              context,
-            ).textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: size.height * 0.02),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Information(context, title: "Orders", value: "100"),
-              Information(context, title: "Vouchers", value: "10"),
-            ],
-          ),
-          Divider(),
-          itemTapped(
-            context,
-            title: 'Order',
-            subtitle: 'This Is The Number Of Orders',
-            icon: Icons.shopping_cart,
-          ),
-          Divider(),
-          itemTapped(
-            context,
-            title: 'Available Vouchers',
-            subtitle: 'This Is The Number Of Vouchers',
-            icon: Icons.card_giftcard,
-          ),
-          Divider(),
-        ],
-      )
-       : Platform.isWindows?Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Container(
-              height: size.height * 0.25,
-      
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  image: AssetImage('assets/images/ashraf.jpg'),
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ),
-          ),
-          Text(
-            "Asharf Nagy Mohamed",
-            style: Theme.of(
-              context,
-            ).textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: size.height * 0.02),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Information(context, title: "Orders", value: "100"),
-              Information(context, title: "Vouchers", value: "10"),
-            ],
-          ),
-          Divider(),
-          itemTapped(
-            context,
-            title: 'Order',
-            subtitle: 'This Is The Number Of Orders',
-            icon: Icons.shopping_cart,
-          ),
-          Divider(),
-          itemTapped(
-            context,
-            title: 'Available Vouchers',
-            subtitle: 'This Is The Number Of Vouchers',
-            icon: Icons.card_giftcard,
-          ),
-          Divider(),
-        ],
-      ):Container();
+    );
   }
 }  
 // import 'dart:io';

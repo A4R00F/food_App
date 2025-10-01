@@ -43,12 +43,27 @@ class FoodGrid extends StatelessWidget {
                   alignment: Alignment.topRight,
                   child: Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: FavoriteItem(
-                      // favorite
-                      foodindex: targetedindex,
-                      height: 20,
-                      width: 20,
-                      // constraints: constraints,
+                    child: Container(
+                      height: 32,
+                      width: 32,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 4,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: Center(
+                        child: FavoriteItem(
+                          foodindex: targetedindex,
+                          height: 20,
+                          width: 20,
+                        ),
+                      ),
                     ),
                   ),
                 ),

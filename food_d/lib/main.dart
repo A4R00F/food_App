@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_d/pages/buttom_nav_page.dart';
+import 'package:food_d/pages/bottom_nav_page.dart';
 import 'package:food_d/pages/food_details.dart';
 // import 'package:food_d/pages/home_page.dart';
 
@@ -12,7 +12,7 @@ class foodapp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
-        // primaryColor: Colors.deepOrange,
+        primaryColor: Colors.deepOrange,
         scaffoldBackgroundColor: Colors.grey[200],
         appBarTheme: const AppBarTheme(
           elevation: 0,

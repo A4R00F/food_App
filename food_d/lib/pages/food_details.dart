@@ -31,12 +31,28 @@ class FoodDetails extends StatelessWidget {
                     pinned: true,
                     leading: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: CustomBackButton(
-                        ontap: () {
-                          Navigator.of(
-                            context,
-                          ).pop<String>(food[foodindex].title);
-                        },
+                      child: Container(
+                        height: 40,
+                        width: 40,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black12,
+                              blurRadius: 4,
+                              offset: Offset(0, 2),
+                            ),
+                          ],
+                        ),
+                        alignment: Alignment.center,
+                        child: CustomBackButton(
+                          ontap: () {
+                            Navigator.of(
+                              context,
+                            ).pop<String>(food[foodindex].title);
+                          },
+                        ),
                       ),
                     ),
                     expandedHeight: size.height * 0.4,
@@ -52,10 +68,27 @@ class FoodDetails extends StatelessWidget {
                     actions: [
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: FavoriteItem(
-                          foodindex: foodindex,
+                        child: Container(
                           height: 40,
                           width: 40,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black12,
+                                blurRadius: 4,
+                                offset: Offset(0, 2),
+                              ),
+                            ],
+                          ),
+                          child: Center(
+                            child: FavoriteItem(
+                              foodindex: foodindex,
+                              height: 24,
+                              width: 24,
+                            ),
+                          ),
                         ),
                       ),
                     ],
