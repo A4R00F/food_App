@@ -9,39 +9,9 @@ class CategoryItem {
 }
 
 List<CategoryItem> categories = [
-  CategoryItem(
-    name: 'Burger',
-    image: AppAssets.burgerIcon,
-    id: '1',
-  ),
-  CategoryItem(
-    name: 'Burger',
-    image: AppAssets.burgerIcon,
-    id: '1',
-  ),
-  CategoryItem(
-    name: 'Burger',
-    image: AppAssets.burgerIcon,
-    id: '1',
-  ),
-  CategoryItem(
-    name: 'Chicken',
-    image: AppAssets.chickenIcon,
-    id: '2',
-  ),
-  CategoryItem(
-    name: 'Chicken',
-    image: AppAssets.chickenIcon,
-    id: '2',
-  ),
-  CategoryItem(
-    name: 'Pizza',
-    image: AppAssets.pizzaIcon,
-    id: '3',
-  ),
-  CategoryItem(
-    name: 'Pizza',
-    image: AppAssets.pizzaIcon,
-    id: '3',
-  ),
+  CategoryItem(name: 'Burger', image: AppAssets.burgerIcon, id: '1'),
+
+  CategoryItem(name: 'Chicken', image: AppAssets.chickenIcon, id: '2'),
+
+  CategoryItem(name: 'Pizza', image: AppAssets.pizzaIcon, id: '3'),
 ];

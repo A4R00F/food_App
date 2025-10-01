@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:food_d/pages/food_item.dart';
 import 'package:food_d/widgets/favorite_item.dart';
 
-class FoodGrid extends StatefulWidget {
+class FoodGrid extends StatelessWidget {
   final int foodindex;
-  const FoodGrid({super.key, required this.foodindex});
+  final List<FoodItem>? filteredfood;
+  const FoodGrid({
+    super.key,
+    required this.foodindex,
+    required this.filteredfood,
+  });
 
-  @override
-  State<FoodGrid> createState() => _FoodGridState();
-}
-
-class _FoodGridState extends State<FoodGrid> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -32,7 +32,7 @@ class _FoodGridState extends State<FoodGrid> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: Image.asset(
-                    food[widget.foodindex].imageurl,
+                    filteredfood![foodindex].imageurl,
                     height: constraints.maxWidth * .8,
                     width: size.width * 0.4,
                     fit: BoxFit.cover,
@@ -44,7 +44,7 @@ class _FoodGridState extends State<FoodGrid> {
                     padding: EdgeInsets.all(8.0),
                     child: FavoriteItem(
                       // favorite
-                      foodindex: widget.foodindex,
+                      foodindex: foodindex,
                       height: 20,
                       width: 20,
                       // constraints: constraints,
@@ -57,7 +57,7 @@ class _FoodGridState extends State<FoodGrid> {
               height: constraints.maxHeight * .13,
               child: FittedBox(
                 child: Text(
-                  food[widget.foodindex].title,
+                  filteredfood![foodindex].title,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontFamily: 'OpenSans',
@@ -69,7 +69,7 @@ class _FoodGridState extends State<FoodGrid> {
               height: constraints.maxHeight * .13,
               child: FittedBox(
                 child: Text(
-                  '${food[widget.foodindex].price}\$',
+                  '${filteredfood![foodindex].price}\$',
                   style: TextStyle(
                     color: Theme.of(context).primaryColor,
                     fontWeight: FontWeight.bold,

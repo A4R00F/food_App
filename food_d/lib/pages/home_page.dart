@@ -16,9 +16,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  String? selectedCategoryItem;
+  late List<FoodItem> filteredfood;
+  @override
+  initState() {
+    filteredfood = food;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    // ignore: deprecated_member_use
     final textScale = MediaQuery.of(context).textScaleFactor;
     return SingleChildScrollView(
       child: Column(
@@ -87,31 +96,53 @@ class _HomePageState extends State<HomePage> {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    width: size.width * 0.15,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Colors.white54,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            categories[index].image,
-                            width: size.width * 0.2,
-                            // height: size.height * 0.05,
-                            fit: BoxFit.cover,
-                          ),
-                          Text(
-                            categories[index].name,
-                            style: Theme.of(context).textTheme.labelLarge!
-                                .copyWith(
-                                  fontSize: 14 * textScale,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                          ),
-                        ],
+                  child: InkWell(
+                    onTap: () {
+                      setState(() {
+                        selectedCategoryItem = categories[index].id;
+                        filteredfood = food
+                            .where(
+                              (item) => item.categoryid == selectedCategoryItem,
+                            )
+                            .toList();
+                      });
+                    },
+                    child: Container(
+                      width: size.width * 0.15,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color:
+                            selectedCategoryItem ==
+                                categories[index]
+                                    .id // طب دي هتحصل متي؟ لما اضغط
+                            ? Colors.deepOrange
+                            : Colors.white,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              categories[index].image,
+                              width: size.width * 0.2,
+                              // height: size.height * 0.05,
+                              fit: BoxFit.cover,
+                            ),
+                            Text(
+                              categories[index].name,
+                              style: Theme.of(context).textTheme.labelLarge!
+                                  .copyWith(
+                                    fontSize: 14 * textScale,
+                                    fontWeight: FontWeight.bold,
+                                    color:
+                                        selectedCategoryItem ==
+                                            categories[index].id
+                                        ? Colors.white
+                                        : Colors.black,
+                                  ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -126,7 +157,7 @@ class _HomePageState extends State<HomePage> {
           GridView.builder(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
-            itemCount: food.length,
+            itemCount: filteredfood.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 2,
@@ -145,7 +176,10 @@ class _HomePageState extends State<HomePage> {
                           setState(() {});
                         });
                   },
-                  child: (FoodGrid(foodindex: index)),
+                  child: (FoodGrid(
+                    foodindex: index,
+                    filteredfood: filteredfood,
+                  )),
                 ),
               );
             },

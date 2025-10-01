@@ -6,24 +6,28 @@ class FoodItem {
   final String imageurl;
   final double price;
    bool? isFavorite;
+   final String? categoryid;
 
   FoodItem({
     required this.title,
     required this.imageurl,
     required this.price,
     this.isFavorite,
+    required this.categoryid,
   });
   FoodItem copyWith({
     String? title,
     String? imageurl,
     double? price,
     bool? isFavorite,
+    String? categoryid,
   }) {
     return FoodItem(
       title: title ?? this.title,
       imageurl: imageurl ?? this.imageurl,
       price: price ?? this.price,
       isFavorite: isFavorite ?? this.isFavorite,
+      categoryid: categoryid ?? this.categoryid,
     );
   }
 }
@@ -34,6 +38,7 @@ List<FoodItem> food = [
     imageurl:
     AppAssets.burger,
     price: 8,
+    categoryid: '1',
     // isFavorite: true,
   ),
   FoodItem(
@@ -41,18 +46,28 @@ List<FoodItem> food = [
     imageurl:
     AppAssets.pizza,
     price: 8,
+    categoryid: '3',
   ),
   FoodItem(
     title: "Pizza",
     imageurl:
     AppAssets.pizza,
     price: 8,
+    categoryid: '3',
+  ),
+  FoodItem(
+    title: "Pizza",
+    imageurl:
+    AppAssets.pizza,
+    price: 8,
+    categoryid: '3',
   ),
   FoodItem(
     title: "Chicken",
     imageurl:
     AppAssets.chicken,
     price: 8,
+    categoryid: '2',
     // isFavorite: true,
   ),
   FoodItem(
@@ -60,6 +75,7 @@ List<FoodItem> food = [
     imageurl:
     AppAssets.chicken,
     price: 8,
+    categoryid: '2',
     // isFavorite: true,
   ),
 ];

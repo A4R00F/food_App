@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'dart:ui';
+// import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -36,17 +36,17 @@ class ProfilePage extends StatelessWidget {
 
   Widget itemTapped(
     BuildContext context, {
-    required String Title,
+    required String title,
     String? subtitle,
     required IconData icon,
   }) {
     return Platform.isAndroid || Platform.isWindows || Platform.isLinux || Platform.isMacOS
         ? ListTile(
             onTap: () {
-              debugPrint('Tapped on $Title');
+              debugPrint('Tapped on $title');
             },
             title: Text(
-              Title,
+              title,
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
@@ -67,10 +67,10 @@ class ProfilePage extends StatelessWidget {
         : Platform.isIOS
         ? CupertinoListTile(
             onTap: () {
-              debugPrint('Tapped on $Title');
+              debugPrint('Tapped on $title');
             },
             title: Text(
-              Title,
+              title,
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
@@ -126,14 +126,14 @@ class ProfilePage extends StatelessWidget {
           Divider(),
           itemTapped(
             context,
-            Title: 'Order',
+            title: 'Order',
             subtitle: 'This Is The Number Of Orders',
             icon: Icons.shopping_cart,
           ),
           Divider(),
           itemTapped(
             context,
-            Title: 'Available Vouchers',
+            title: 'Available Vouchers',
             subtitle: 'This Is The Number Of Vouchers',
             icon: Icons.card_giftcard,
           ),
@@ -173,14 +173,14 @@ class ProfilePage extends StatelessWidget {
           Divider(),
           itemTapped(
             context,
-            Title: 'Order',
+            title: 'Order',
             subtitle: 'This Is The Number Of Orders',
             icon: Icons.shopping_cart,
           ),
           Divider(),
           itemTapped(
             context,
-            Title: 'Available Vouchers',
+            title: 'Available Vouchers',
             subtitle: 'This Is The Number Of Vouchers',
             icon: Icons.card_giftcard,
           ),
@@ -220,14 +220,14 @@ class ProfilePage extends StatelessWidget {
           Divider(),
           itemTapped(
             context,
-            Title: 'Order',
+            title: 'Order',
             subtitle: 'This Is The Number Of Orders',
             icon: Icons.shopping_cart,
           ),
           Divider(),
           itemTapped(
             context,
-            Title: 'Available Vouchers',
+            title: 'Available Vouchers',
             subtitle: 'This Is The Number Of Vouchers',
             icon: Icons.card_giftcard,
           ),

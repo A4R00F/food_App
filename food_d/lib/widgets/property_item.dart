@@ -7,8 +7,8 @@ class PropertyItem extends StatelessWidget {
     required this.protitle,
   });
 
-  final provalue;
-  final protitle;
+  final String provalue;
+  final String protitle;
   @override
   Widget build(BuildContext context) {
     return Column(
