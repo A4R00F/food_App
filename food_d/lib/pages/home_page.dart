@@ -167,13 +167,27 @@ class _HomePageState extends State<HomePage> {
               return Center(
                 child: InkWell(
                   onTap: () {
+                    final targetedfooditem = food.firstWhere(
+                      (item) => item.id == filteredfood[index].id,
+                    );
+                    final targetedindex = food.indexOf(
+                      targetedfooditem,
+                    ); // الناتج هو رقم الفهرس (index) لهذا العنصر في القائمة الأصلية.
+
                     Navigator.of(context)
-                        .pushNamed(FoodDetails.routeName, arguments: index)
+                        .pushNamed(
+                          FoodDetails.routeName,
+                          arguments: targetedindex,
+                        )
                         .then((onValue) {
-                          debugPrint(
+                          
+                          setState(() {
+                            debugPrint(
                             "The Value Returned In Home Screen is $onValue",
                           );
-                          setState(() {});
+                          filteredfood=food;
+                          selectedCategoryItem=null; // الخاص بالضغط
+                          });
                         });
                   },
                   child: (FoodGrid(

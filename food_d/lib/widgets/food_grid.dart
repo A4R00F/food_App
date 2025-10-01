@@ -13,6 +13,7 @@ class FoodGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final targetedindex=food.indexOf(filteredfood![foodindex]);
     final size = MediaQuery.of(context).size;
     return Container(
       width: 150,
@@ -44,7 +45,7 @@ class FoodGrid extends StatelessWidget {
                     padding: EdgeInsets.all(8.0),
                     child: FavoriteItem(
                       // favorite
-                      foodindex: foodindex,
+                      foodindex: targetedindex,
                       height: 20,
                       width: 20,
                       // constraints: constraints,

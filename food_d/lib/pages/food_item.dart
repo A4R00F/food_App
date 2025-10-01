@@ -5,8 +5,9 @@ class FoodItem {
   final String title;
   final String imageurl;
   final double price;
-   bool? isFavorite;
-   final String? categoryid;
+  bool? isFavorite;
+  final String? categoryid;
+  final String id;
 
   FoodItem({
     required this.title,
@@ -14,6 +15,7 @@ class FoodItem {
     required this.price,
     this.isFavorite,
     required this.categoryid,
+    required this.id,
   });
   FoodItem copyWith({
     String? title,
@@ -21,6 +23,7 @@ class FoodItem {
     double? price,
     bool? isFavorite,
     String? categoryid,
+    String? id,
   }) {
     return FoodItem(
       title: title ?? this.title,
@@ -28,6 +31,7 @@ class FoodItem {
       price: price ?? this.price,
       isFavorite: isFavorite ?? this.isFavorite,
       categoryid: categoryid ?? this.categoryid,
+      id: id ?? this.id,
     );
   }
 }
@@ -35,47 +39,47 @@ class FoodItem {
 List<FoodItem> food = [
   FoodItem(
     title: "Burger",
-    imageurl:
-    AppAssets.burger,
+    imageurl: AppAssets.burger,
     price: 8,
     categoryid: '1',
+    id:"burger1"
     // isFavorite: true,
   ),
   FoodItem(
     title: "Pizza",
-    imageurl:
-    AppAssets.pizza,
+    imageurl: AppAssets.pizza,
     price: 8,
     categoryid: '3',
+    id: "pizza 1"
   ),
   FoodItem(
     title: "Pizza",
-    imageurl:
-    AppAssets.pizza,
+    imageurl: AppAssets.pizza,
     price: 8,
     categoryid: '3',
+    id:"pizaa 2"
   ),
   FoodItem(
     title: "Pizza",
-    imageurl:
-    AppAssets.pizza,
+    imageurl: AppAssets.pizza,
     price: 8,
     categoryid: '3',
+    id:"pizza 3"
   ),
   FoodItem(
     title: "Chicken",
-    imageurl:
-    AppAssets.chicken,
+    imageurl: AppAssets.chicken,
     price: 8,
     categoryid: '2',
+    id:"chicken 1"
     // isFavorite: true,
   ),
   FoodItem(
     title: "Chicken",
-    imageurl:
-    AppAssets.chicken,
+    imageurl: AppAssets.chicken,
     price: 8,
     categoryid: '2',
+    id: "chicken 2"
     // isFavorite: true,
   ),
 ];
