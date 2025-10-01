@@ -16,6 +16,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool enableCategoryFilter = false;
   String? selectedCategoryItem;
   late List<FoodItem> filteredfood;
   @override
@@ -99,12 +100,23 @@ class _HomePageState extends State<HomePage> {
                   child: InkWell(
                     onTap: () {
                       setState(() {
-                        selectedCategoryItem = categories[index].id;
-                        filteredfood = food
-                            .where(
-                              (item) => item.categoryid == selectedCategoryItem,
-                            )
-                            .toList();
+                        if (selectedCategoryItem == categories[index].id ||
+                            !enableCategoryFilter) {
+                          enableCategoryFilter = !enableCategoryFilter;
+                        }
+
+                        if (enableCategoryFilter) {
+                          selectedCategoryItem = categories[index].id;
+                          filteredfood = food
+                              .where(
+                                (item) =>
+                                    item.categoryid == selectedCategoryItem,
+                              )
+                              .toList();
+                        } else {
+                          selectedCategoryItem = null;
+                          filteredfood = food;
+                        }
                       });
                     },
                     child: Container(
@@ -180,13 +192,12 @@ class _HomePageState extends State<HomePage> {
                           arguments: targetedindex,
                         )
                         .then((onValue) {
-                          
                           setState(() {
                             debugPrint(
-                            "The Value Returned In Home Screen is $onValue",
-                          );
-                          filteredfood=food;
-                          selectedCategoryItem=null; // الخاص بالضغط
+                              "The Value Returned In Home Screen is $onValue",
+                            );
+                            filteredfood = food;
+                            selectedCategoryItem = null; // الخاص بالضغط
                           });
                         });
                   },
